@@ -1,7 +1,6 @@
 def countList(arr):
     if arr != [] :
-        arr.pop();
-        return 1 + countList(arr);
+        return 1 + countList(arr[1:]);
     else:
         return 0;
 
