@@ -1,16 +1,17 @@
-def countlist(arr):
+def countList(arr):
     if arr != [] :
         arr.pop();
-        return 1 + countlist(arr);
+        return 1 + countList(arr);
     else:
         return 0;
 
 def findMax(arr):
-    if countlist(arr) > 1:
-        maxN = arr[0];
-        if maxN < findMax(arr[1:]):
-            maxN=findMax(arr[1:])
-        return maxN;
+    if countList(arr) != 1:
+        maxN = arr.pop();
+        nextN = findMax(arr);
+        if maxN < nextN:
+            maxN=nextN
+        return maxN
     else:
         return arr[0]
 
